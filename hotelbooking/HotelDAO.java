@@ -1,9 +1,6 @@
 package hotelbooking;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static hotelbooking.Utils.printMessage;
@@ -126,8 +123,11 @@ public class HotelDAO extends AbstractDAOImpl<Hotel> {
                                      (price > 0 ? room.getPrice() == price : true)))
                     .sorted((room1, room2) -> Double.compare(room1.getPrice(), room2.getPrice()))
                     .collect(Collectors.toList()));
-            if (entry.getValue().size() == 0) {
-                resultHotelMap.remove(entry.getKey());
+        }
+        Iterator iterator = resultHotelMap.values().iterator();
+        while (iterator.hasNext()) {
+            if (((List<Room>) iterator.next()).size() == 0){
+                iterator.remove();
             }
         }
         return resultHotelMap;
