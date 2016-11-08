@@ -1,9 +1,7 @@
 package hotelbooking;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.function.BiConsumer;
 
 import static hotelbooking.Utils.printMessage;
 
@@ -42,6 +40,8 @@ public class Main {
         printMessage("Set user3 as current user (currentUser.setCurrentUser(user3)).");
 //      Set user3 as current user (currentUser.setCurrentUser(user3)).
         currentUser.setCurrentUser(user3);
+        controller.setCurrentUser(currentUser);
+
 //      Current user is User{userId=3, firstName='Stepan', lastName='Stepanov', userRegistered=false}
 //      Current user is not registered! Please, register user in the system! User{userId=3, firstName='Stepan', lastName='Stepanov', userRegistered=false}
         try {
@@ -54,8 +54,9 @@ public class Main {
         printMessage("Try to print list of registered users (controller.getAllUsers()) when current user is set to registered user2!");
 //      Try to print list of registered users (controller.getAllUsers()) when current user is set to registered user2!
         printMessage("Set user2 as current user (currentUser.setCurrentUser(user2)).");
-//      Set user2 as current user (currentUser.setCurrentUser(user2)).
+//      Set user2 as current user (controller.setCurrentUser(user2)).
         currentUser.setCurrentUser(user2);
+        controller.setCurrentUser(currentUser);
 //      Current user is User{userId=2, firstName='Petr', lastName='Petrov', userRegistered=true}
         printMessage("Registered users (controller.getAllUsers()):");
 //      Registered users (controller.getAllUsers()):

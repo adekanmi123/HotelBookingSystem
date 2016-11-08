@@ -7,10 +7,21 @@ import static hotelbooking.Utils.printMessage;
 
 public class Controller {
 
+    private CurrentUser currentUser;
     private UserDAO userDAO = UserDAO.getInstance();
     private HotelDAO hotelDAO = HotelDAO.getInstance();
 
-    private CurrentUser currentUser;
+    public Controller() {
+        this.currentUser = new CurrentUser();
+    }
+
+    public CurrentUser getCurrentUser() {
+        return currentUser;
+    }
+
+    public void setCurrentUser(CurrentUser currentUser) {
+        this.currentUser = currentUser;
+    }
 
     public User registerUser(User user) {
         user.setUserRegistered(true);
