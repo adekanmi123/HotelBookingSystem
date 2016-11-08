@@ -12,10 +12,6 @@ public class Controller {
 
     private CurrentUser currentUser;
 
-    public Controller() {
-        this.currentUser = CurrentUser.getInstance();
-    }
-
     public User registerUser(User user) {
         user.setUserRegistered(true);
         return userDAO.save(user);

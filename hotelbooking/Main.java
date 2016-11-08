@@ -14,7 +14,7 @@ public class Main {
         printMessage("Hotel Online Booking System!");
 //      System output: Hotel Online Booking System!
         Controller controller = new Controller();
-        CurrentUser currentUser = CurrentUser.getInstance();
+        CurrentUser currentUser = new CurrentUser();
 
         User user1 = new User(1, "Ivan", "Ivanov");
         User user2 = new User(2, "Petr", "Petrov");
