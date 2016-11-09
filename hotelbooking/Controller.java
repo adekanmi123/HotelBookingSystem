@@ -55,12 +55,12 @@ public class Controller {
         hotelName = params.getOrDefault("hotelName", null);
         try {
             price = Double.valueOf(params.get("price"));
-        } catch (NumberFormatException e) {
+        } catch (NumberFormatException | NullPointerException e) {
             price = 0;
         }
         try {
             persons = Integer.parseInt(params.get("persons"));
-        } catch (NumberFormatException e) {
+        } catch (NumberFormatException | NullPointerException e) {
             persons = 0;
         }
         return hotelDAO.getRooms(city, hotelName, price, persons);
